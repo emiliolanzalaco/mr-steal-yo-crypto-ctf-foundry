@@ -6,6 +6,7 @@ import {Test} from "forge-std/Test.sol";
 import {console} from "forge-std/console.sol";
 // core contracts
 import {FlatLaunchpeg} from "src/jpeg-sniper/FlatLaunchpeg.sol";
+import {ExploiterFactory} from "src/jpeg-sniper/Exploiter.sol";    
 
 
 contract Testing is Test {
@@ -36,7 +37,7 @@ contract Testing is Test {
     function testChallengeExploit() public {
         vm.startPrank(attacker,attacker);
 
-        // implement solution here
+        ExploiterFactory factory = new ExploiterFactory{value: 1 ether}(address(flatLaunchpeg));
 
         vm.stopPrank();
         validation();
