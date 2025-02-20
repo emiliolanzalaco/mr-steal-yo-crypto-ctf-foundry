@@ -63,8 +63,8 @@ contract Testing is Test {
 
         GameExploiter exploiterContract = new GameExploiter(address(assetWrapper));
 
-        exploiterContract.exploit(0, attacker, address(swordAsset));
-        exploiterContract.exploit(0, attacker, address(shieldAsset));
+        exploiterContract.exploit(0, address(swordAsset));
+        exploiterContract.exploit(0, address(shieldAsset));
 
         vm.stopPrank();
         validation();
